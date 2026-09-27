@@ -218,8 +218,11 @@ section#work {
   --color-accent: #2e8b57;
 }
 section#contact {
-  background-color: #4b0082;
-  color: #e6e6fa;
+  background: linear-gradient(rgba(75, 0, 130, 0.4), rgba(75, 0, 130, 0.4)),
+    url("assets/totoro-image.jpg");
+  background-size: contain;
+  background-position: center;
+  color: #333;
   --color-accent: #ff4500;
 }
 section#footer {
