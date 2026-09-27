@@ -197,14 +197,26 @@ section {
   padding: var(--space-2xl) var(--space-l);
 }
 section#hero {
-  background: linear-gradient(rgba(26, 26, 64, 0.4), rgba(26, 26, 64, 0.4)),
-    url("assets/plant-background.jpg");
+  position: relative;
+  overflow: hidden;
   padding-bottom: 4px;
-  background-size: cover;
-  background-position: top;
-  background-attachment: scroll;
   color: #fafafa;
   --color-accent: #8a2be2;
+    min-height: 100vh;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+#hero .wrapper {
+  position: relative;
+  z-index: 1;
 }
 }
 section#about {
