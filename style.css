@@ -470,7 +470,7 @@ section#contact {
 
   background: linear-gradient(rgba(75, 0, 130, 0.4), rgba(75, 0, 130, 0.4)),
 
-    url("assets/totoro-image.jpg");
+    url("assets/plant-white-background.jpg");
 
   background-size: contain;
 
@@ -679,105 +679,57 @@ section#footer {
 
 
 
-/* contact section */
+/* ================================
+   Retro Pixel Contact Button
+   ================================ */
 
-#contact h2 {
-  margin-bottom: 20px;
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 6px;
+.email_button {
+  position: relative;
+  display: inline-block;
+
+  padding: 22px 55px;
+
+  background-color: #d0d0d0;
+  color: #222;
+
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+
+  border: 8px solid #222;
+
+  /* Pixel-style outer edges */
+  box-shadow:
+    8px 8px 0 #222,
+    -8px 0 0 #222;
+
+  clip-path: polygon(
+    8px 0,
+    calc(100% - 8px) 0,
+    calc(100% - 8px) 8px,
+    100% 8px,
+    100% calc(100% - 8px),
+    calc(100% - 8px) calc(100% - 8px),
+    calc(100% - 8px) 100%,
+    8px 100%,
+    8px calc(100% - 8px),
+    0 calc(100% - 8px),
+    0 8px,
+    8px 8px
+  );
+
+  transition: transform 0.15s ease;
 }
 
-#contact p {
-  margin-bottom: 30px;
+.email_button:hover {
+  background-color: #c0c0c0;
+  transform: translateY(-3px);
 }
 
-.contact_form {
-
-  display: flex;
-
-  flex-direction: column;
-
-  gap: 20px;
-
-}
-
-
-
-.form_group {
-
-  display: flex;
-
-  flex-direction: column;
-
-}
-
-
-
-label {
-
-  margin-bottom: 5px;
-
-  font-weight: bold;
-
-}
-
-
-
-input[type="text"],
-
-input[type="email"],
-
-textarea {
-
-  width: 100%;
-
-  padding: 10px;
-
-  border: 1px solid #ccc;
-
-  border-radius: 4px;
-
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
-  margin-bottom: 10px;
-
-}
-
-
-
-textarea {
-
-  resize: vertical;
-
-  height: 130px
-
-}
-
-
-
-button[type="submit"] {
-
-  padding: 10px 20px;
-
-  border: none;
-
-  border-radius: 4px;
-
-  background-color: #007bff;
-
-  color: white;
-
-  cursor: pointer;
-
-}
-
-
-
-button[type="submit"]:hover {
-
-  background-color: #0056b3;
-
+.email_button:active {
+  transform: translateY(2px);
 }
 
 
