@@ -89,24 +89,34 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
-const darkModeButton = document.getElementById("dark-mode-toggle");
+// ================================
+// Dark Mode Toggle
+// ================================
 
-if (localStorage.getItem("darkMode") === "enabled") {
-  document.body.classList.add("dark-mode");
-  darkModeButton.textContent = "☀️ Light Mode";
+const themeToggle = document.getElementById("theme-toggle");
+const themeLabel = document.getElementById("theme-label");
+
+// Load saved theme
+if (localStorage.getItem("theme") === "dark") {
+    document.documentElement.setAttribute("data-theme", "dark");
+    themeToggle.checked = true;
+    themeLabel.textContent = "Too dark? 🌙";
 }
 
-darkModeButton.addEventListener("click", () => {
-  document.body.classList.toggle("dark-mode");
+// Toggle theme
+themeToggle.addEventListener("change", function () {
 
-  if (document.body.classList.contains("dark-mode")) {
-    localStorage.setItem("darkMode", "enabled");
-    darkModeButton.textContent = "☀️ Light Mode";
-  } else {
-    localStorage.setItem("darkMode", "disabled");
-    darkModeButton.textContent = "🌙 Dark Mode";
-  }
+    if (this.checked) {
+        document.documentElement.setAttribute("data-theme", "dark");
+        themeLabel.textContent = "Too dark? 🌙";
+
+        localStorage.setItem("theme", "dark");
+
+    } else {
+        document.documentElement.setAttribute("data-theme", "light");
+        themeLabel.textContent = "Too bright? ☀️";
+
+        localStorage.setItem("theme", "light");
+    }
+
 });
-
-
-
