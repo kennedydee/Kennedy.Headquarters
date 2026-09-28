@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
     link.addEventListener("click", (event) => {
       const targetId = link.getAttribute("href");
 
-      // Ignore links that don't point to a section
       if (!targetId || targetId === "#0") {
         event.preventDefault();
         window.scrollTo({
