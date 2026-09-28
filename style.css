@@ -658,3 +658,91 @@ html[data-theme="dark"] .theme-switch {
 .switch input:checked + .slider::before {
     transform: translateX(24px);
 }
+/* =========================================
+   FINAL DARK MODE OVERRIDE
+========================================= */
+
+html[data-theme="dark"] body {
+    background-color: #121212 !important;
+    color: #ffffff !important;
+}
+
+/* ABOUT */
+html[data-theme="dark"] #about {
+    background-color: #1a1a2e !important;
+    color: #ffffff !important;
+}
+
+html[data-theme="dark"] #about * {
+    color: #ffffff !important;
+}
+
+/* WORK */
+html[data-theme="dark"] #work {
+    background-color: #16213e !important;
+    color: #ffffff !important;
+}
+
+html[data-theme="dark"] #work * {
+    color: #ffffff !important;
+}
+
+/* CONTACT */
+html[data-theme="dark"] #contact {
+    background-color: #0f0f1a !important;
+    color: #ffffff !important;
+}
+
+html[data-theme="dark"] #contact * {
+    color: #ffffff !important;
+}
+
+/* FOOTER */
+html[data-theme="dark"] #footer {
+    background-color: #0b0b18 !important;
+    color: #ffffff !important;
+}
+
+html[data-theme="dark"] #footer * {
+    color: #ffffff !important;
+}
+
+/* HEADER */
+html[data-theme="dark"] header {
+    background-color: #111111 !important;
+}
+
+html[data-theme="dark"] nav a {
+    color: #ffffff !important;
+}
+
+/* HEADINGS */
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] h4,
+html[data-theme="dark"] h5,
+html[data-theme="dark"] h6,
+html[data-theme="dark"] p {
+    color: #ffffff !important;
+}
+
+/* FORM INPUTS */
+html[data-theme="dark"] input,
+html[data-theme="dark"] textarea {
+    background-color: #222222 !important;
+    color: #ffffff !important;
+    border-color: #666666 !important;
+}
+
+/* BUTTON */
+html[data-theme="dark"] button[type="submit"] {
+    background-color: #8a2be2 !important;
+    color: #ffffff !important;
+}
+
+/* TOGGLE CONTAINER */
+html[data-theme="dark"] .theme-switch {
+    background-color: #222222 !important;
+    color: #ffffff !important;
+}
