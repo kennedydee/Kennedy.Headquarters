@@ -39,38 +39,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
-  // ================================
-  // Contact Form
-  // ================================
-
-  const contactForm = document.querySelector(".contact_form");
-
-  if (contactForm) {
-    contactForm.addEventListener("submit", (event) => {
-      event.preventDefault();
-
-      const name = document.querySelector("#name").value.trim();
-      const email = document.querySelector("#email").value.trim();
-      const message = document.querySelector("#message").value.trim();
-
-      if (!name || !email || !message) {
-        alert("Please fill out all fields before sending your message.");
-        return;
-      }
-
-     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-      if (!emailPattern.test(email)) {
-        alert("Please enter a valid email address.");
-        return;
-      }
-
-      alert(`Thanks, ${name}! Your message has been received.`);
-
-      contactForm.reset();
-    });
-  }
-
 
   // ================================
   // Current Year
