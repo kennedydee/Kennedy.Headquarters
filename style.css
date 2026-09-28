@@ -1075,3 +1075,39 @@ html[data-theme="dark"] .theme-switch {
     height: 220px;
   }
 }
+// ================================
+// Contact Form
+// ================================
+document.addEventListener("DOMContentLoaded", () => {
+  const contactForm = document.querySelector(".contact_form");
+
+  if (contactForm) {
+    contactForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const name = document.querySelector("#name").value.trim();
+      const email = document.querySelector("#email").value.trim();
+      const message = document.querySelector("#message").value.trim();
+
+      if (!name || !email || !message) {
+        alert("Please fill out all fields before sending your message.");
+        return;
+      }
+
+      const subject = `Portfolio Contact from ${name}`;
+
+      const body = `Name: ${name}
+Email: ${email}
+
+Message:
+${message}`;
+
+      const mailtoLink =
+        `mailto:17kennedy.d@gmail.com` +
+        `?subject=${encodeURIComponent(subject)}` +
+        `&body=${encodeURIComponent(body)}`;
+
+      window.location.href = mailtoLink;
+    });
+  }
+});
