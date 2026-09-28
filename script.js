@@ -3,7 +3,11 @@
 // ================================
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Smooth scrolling for navigation links
+
+  // ================================
+  // Smooth Scrolling
+  // ================================
+
   const navLinks = document.querySelectorAll(".site_header_nav a");
 
   navLinks.forEach((link) => {
@@ -12,10 +16,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (!targetId || targetId === "#0") {
         event.preventDefault();
+
         window.scrollTo({
           top: 0,
-          behavior: "smooth",
+          behavior: "smooth"
         });
+
         return;
       }
 
@@ -26,11 +32,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         targetSection.scrollIntoView({
           behavior: "smooth",
-          block: "start",
+          block: "start"
         });
       }
     });
   });
+
 
   // ================================
   // Contact Form
@@ -51,7 +58,6 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      // Basic email validation
       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
       if (!emailPattern.test(email)) {
@@ -61,10 +67,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
       alert(`Thanks, ${name}! Your message has been received.`);
 
-      // Clear the form after submission
       contactForm.reset();
     });
   }
+
 
   // ================================
   // Current Year
@@ -73,51 +79,96 @@ document.addEventListener("DOMContentLoaded", () => {
   const footerText = document.querySelector("#footer p");
 
   if (footerText) {
-    const currentYear = new Date().getFullYear();
-    footerText.innerHTML = `&copy; ${currentYear} Dee Kennedy`;
+    footerText.innerHTML = `&copy; ${new Date().getFullYear()} Dee Kennedy`;
   }
 
-  // ================================
-  // Hero Video
-  // ================================
 
-  const heroVideo = document.querySelector(".hero-video");
+  // ================================
+// Hero Video
+// ================================
 
-  if (heroVideo) {
-    heroVideo.addEventListener("error", () => {
-      console.log("The hero background video could not be loaded.");
+const heroVideo = document.querySelector(".hero-video");
+
+if (heroVideo) {
+
+  heroVideo.addEventListener("error", () => {
+    console.log("The hero background video could not be loaded.");
+  });
+
+  // Make sure the video continues playing after theme changes
+  const themeToggle = document.getElementById("theme-toggle");
+
+  if (themeToggle) {
+    themeToggle.addEventListener("change", () => {
+
+      if (heroVideo.paused) {
+        heroVideo.play().catch((error) => {
+          console.log("Video playback could not resume:", error);
+        });
+      }
+
     });
   }
-});
-// ================================
-// ================================
-// Dark Mode Toggle
-// ================================
-
-const themeToggle = document.getElementById("theme-toggle");
-const themeLabel = document.getElementById("theme-label");
-
-// Load saved theme
-if (localStorage.getItem("theme") === "dark") {
-    document.documentElement.setAttribute("data-theme", "dark");
-    themeToggle.checked = true;
-    themeLabel.textContent = "Too dark? 🌙";
 }
 
-// Toggle theme
-themeToggle.addEventListener("change", function () {
 
-    if (this.checked) {
-        document.documentElement.setAttribute("data-theme", "dark");
+  // ================================
+  // Dark Mode Toggle
+  // ================================
+
+  const themeToggle = document.getElementById("theme-toggle");
+  const themeLabel = document.getElementById("theme-label");
+
+
+  // ================================
+  // Update Theme
+  // ================================
+
+  function updateTheme(isDark) {
+
+    if (isDark) {
+      document.documentElement.setAttribute("data-theme", "dark");
+      localStorage.setItem("theme", "dark");
+
+      if (themeLabel) {
         themeLabel.textContent = "Too dark? 🌙";
-
-        localStorage.setItem("theme", "dark");
+      }
 
     } else {
-        document.documentElement.setAttribute("data-theme", "light");
-        themeLabel.textContent = "Too bright? ☀️";
+      document.documentElement.setAttribute("data-theme", "light");
+      localStorage.setItem("theme", "light");
 
-        localStorage.setItem("theme", "light");
+      if (themeLabel) {
+        themeLabel.textContent = "Too bright? ☀️";
+      }
     }
+  }
+
+
+  // ================================
+  // Load Saved Theme
+  // ================================
+
+  if (themeToggle) {
+
+    const savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme === "dark") {
+      themeToggle.checked = true;
+      updateTheme(true);
+    } else {
+      themeToggle.checked = false;
+      updateTheme(false);
+    }
+
+
+    // ================================
+    // Listen for Slider Changes
+    // ================================
+
+    themeToggle.addEventListener("change", () => {
+      updateTheme(themeToggle.checked);
+    });
+  }
 
 });

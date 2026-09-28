@@ -1,192 +1,318 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Kennedy - CodeSquad Portfolio</title>
-  </head>
-  <body>
-    <div class="theme-switch">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <title>Kennedy - CodeSquad Portfolio</title>
+</head>
+
+<body>
+
+  <!-- Dark Mode Slider -->
+  <div class="theme-switch" id="theme-switch">
     <span id="theme-label">Too bright? ☀️</span>
 
-    <label class="switch">
-        <input type="checkbox" id="theme-toggle">
-        <span class="slider"></span>
+    <label class="switch" aria-label="Toggle dark mode">
+      <input type="checkbox" id="theme-toggle" />
+      <span class="slider"></span>
     </label>
-</div>
-    <header class="site_header">
-      <div class="wrapper_inner">
-        <nav class="site_header_nav">
-          
-          <ul role="list" class="flex flex_center">
-           
-  </label>
-</li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-    <main>
+  </div>
 
-      <section id="hero">
-  <video autoplay muted loop playsinline class="hero-video">
-    <source src="assets/space-background.mp4" type="video/mp4">
-  </video>
 
-  <div class="wrapper">
+  <!-- Header -->
+  <header class="site_header">
     <div class="wrapper_inner">
-      <div class="text_center hero_content">
-        <h1 class="h2">DeJa Kennedy</h1>
-        <p class="h5">Cyber security student, hobbiest and aspiring software engineer </p>
-      </div>
+      <nav class="site_header_nav">
+        <ul role="list" class="flex flex_center">
+          <!-- Navigation links can go here -->
+        </ul>
+      </nav>
     </div>
-
-    <p class="h5 text_center">
-      Welcome to my personal portfolio site, built to showcase some of what I've learned so far in cybersecurity and software development.
-  </div>
-
-  <div class="hero_corner">
-    <img
-      src="assets/yellow-shirt-headshot.png"
-      alt="Photo of Dee"
-      class="hero_img"
-    />
-    <ul role="list" class="flex">
-      
-      <li>
-        <a href="https://github.com/kennedydee" target="_blank">
-          <img
-            src="assets/icon-github.svg"
-            alt="GitHub icon"
-            width="24"
-            height="24"
-          />
-        </a>
-      </li>
-      <li>
-        <a href="https://www.linkedin.com/in/deja-kennedy-9246a8155" target="_blank">
-          <img
-            src="assets/icon-linkedin.svg"
-            alt="LinkedIn"
-            width="24"
-            height="24"
-          />
-        </a>
-      </li>
-    </ul>
-  </div>
-</section>
-
-        </li>
-      </ul>
-    </ul>
-  </div>
-</section>
-
-    <section id="about">
-  <div class="wrapper">
-
-    <!-- Dark Mode Slider -->
-    <div class="theme-switch">
-      <span id="theme-label">Too bright? ☀️</span>
-
-      <label class="switch" aria-label="Toggle dark mode">
-        <input type="checkbox" id="theme-toggle">
-        <span class="slider"></span>
-      </label>
-    </div>
-
-    <div class="text_center">
-      <h2 class="h3">About me</h2>
-      <p class="h5">
-      </p>
-    </div>
-
-    <p class="h5">
-      Originally from Michigan, I now spend my days exploring Atlanta, Georgia, where I am currently enrolled in a cybersecurity program at Alabama A&M University. I am excited to continue learning and growing in this field, and I look forward to the opportunities that lie ahead.
-
-      When I'm not glued to my computer screen, you can find me behind a camera, experimenting with new recipes, or trying to find space in my home for a new plant! As I continue to explore opportunities within the technology field, I find myself gravitating towards software engineering, technical support, and web development.
-
-      In addition to my professional goals, one of my personal aspirations is to travel to Greece someday, as I would enjoy experiencing its rich history, culture, and beautiful landscapes.
-    </p>
-
-  </div>
-</section>
-
-      <section id="work">
-  <div class="wrapper_inner">
-    <div class="text_center">
-      <h4 class="h5">
-        A few things I've accomplished during this mini-course: an area calculator, a basic event hub, and a small list of web browsers!
-      </h4>
-      <ul role="list" class="work_logos flex flex_center">
-        <li>
-          <img src="assets/Calc-project.png" alt="Calculator project" />
-        </li>
-        <li>
-          <img src="assets/event-hub-code.png" alt="Event Hub" />
-        </li>
-        <li>
-          <img src="assets/web-browser-list.png" alt="Web Browser List" />
-        </li>
-      </ul>
+  </header>
 
 
-    </div>
-  </div>
-</section>
+  <main>
 
-      <section id="contact">
-        <div class="wrapper">
-          <div class="text_left">
-            
-            <p>
-              Like what you see? <br />
-              I'd love to hear your thoughts! <br />
-              Please reach out to me via the form below or through my social media links.
+    <!-- Hero Section -->
+    <section id="hero">
+
+      <video autoplay muted loop playsinline class="hero-video">
+        <source
+          src="assets/space-background.mp4"
+          type="video/mp4"
+        />
+      </video>
+
+      <div class="wrapper">
+
+        <div class="wrapper_inner">
+
+          <div class="text_center hero_content">
+            <h1 class="h2">DeJa Kennedy</h1>
+
+            <p class="h5">
+              Cyber security student, hobbyist, and aspiring software engineer
             </p>
           </div>
 
-          <div class="wrapper_inner">
-            <h5 class="h3">Contact Me</h5>
-            <form action="mailto:youremail@example.com" method="post" class="contact_form">
-              <div class="flex">
-                <div class="form_group">
-                  <label for="name">NAME</label>
-                  <input type="text" id="name" name="name" />
-                </div>
-                <div class="form_group">
-                  <label for="email">EMAIL</label>
-                  <input type="email" id="email" name="email" />
-                </div>
-              </div>
+          <p class="h5 text_center">
+            Welcome to my personal portfolio site, built to showcase some of
+            what I've learned so far in cybersecurity and software development.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- Hero Image and Social Links -->
+      <div class="hero_corner">
+
+        <img
+          src="assets/yellow-shirt-headshot.png"
+          alt="Photo of Dee"
+          class="hero_img"
+        />
+
+        <ul role="list" class="flex">
+
+          <li>
+            <a
+              href="https://github.com/kennedydee"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="assets/icon-github.svg"
+                alt="GitHub icon"
+                width="24"
+                height="24"
+              />
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="https://www.linkedin.com/in/deja-kennedy-9246a8155"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="assets/icon-linkedin.svg"
+                alt="LinkedIn"
+                width="24"
+                height="24"
+              />
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </section>
+
+
+    <!-- About Section -->
+    <section id="about">
+
+      <div class="wrapper">
+
+        <div class="text_center">
+
+          <h2 class="h3">
+            About me
+          </h2>
+
+        </div>
+
+        <p class="h5">
+          Originally from Michigan, I now spend my days exploring Atlanta,
+          Georgia, where I am currently enrolled in a cybersecurity program
+          at Alabama A&M University. I am excited to continue learning and
+          growing in this field, and I look forward to the opportunities
+          that lie ahead.
+
+          When I'm not glued to my computer screen, you can find me behind
+          a camera, experimenting with new recipes, or trying to find space
+          in my home for a new plant! As I continue to explore opportunities
+          within the technology field, I find myself gravitating towards
+          software engineering, technical support, and web development.
+
+          In addition to my professional goals, one of my personal aspirations
+          is to travel to Greece someday, as I would enjoy experiencing its
+          rich history, culture, and beautiful landscapes.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- Work Section -->
+    <section id="work">
+
+      <div class="wrapper_inner">
+
+        <div class="text_center">
+
+          <h4 class="h5">
+            A few things I've accomplished during this mini-course:
+            an area calculator, a basic event hub, and a small list
+            of web browsers!
+          </h4>
+
+          <ul role="list" class="work_logos flex flex_center">
+
+            <li>
+              <img
+                src="assets/Calc-project.png"
+                alt="Calculator project"
+              />
+            </li>
+
+            <li>
+              <img
+                src="assets/event-hub-code.png"
+                alt="Event Hub"
+              />
+            </li>
+
+            <li>
+              <img
+                src="assets/web-browser-list.png"
+                alt="Web Browser List"
+              />
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact">
+
+      <div class="wrapper">
+
+        <div class="text_left">
+
+          <p>
+            Like what you see? <br />
+            I'd love to hear your thoughts! <br />
+            Please reach out to me via the form below or through my
+            social media links.
+          </p>
+
+        </div>
+
+
+        <div class="wrapper_inner">
+
+          <h5 class="h3">
+            Contact Me
+          </h5>
+
+          <form
+            action="mailto:youremail@example.com"
+            method="post"
+            class="contact_form"
+          >
+
+            <div class="flex">
+
               <div class="form_group">
-                <label for="message">Message</label>
-                <textarea id="message" name="message"></textarea>
+
+                <label for="name">
+                  NAME
+                </label>
+
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                />
+
               </div>
-              <button type="submit">SEND MESSAGE</button>
-            </form>
-          </div>
+
+
+              <div class="form_group">
+
+                <label for="email">
+                  EMAIL
+                </label>
+
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                />
+
+              </div>
+
+            </div>
+
+
+            <div class="form_group">
+
+              <label for="message">
+                Message
+              </label>
+
+              <textarea
+                id="message"
+                name="message"
+              ></textarea>
+
+            </div>
+
+
+            <button type="submit">
+              SEND MESSAGE
+            </button>
+
+          </form>
+
         </div>
-      </section>
-    </main>
-    <footer>
-      <section id="footer">
-        <div class="wrapper">
-          <div class="text_right">
-            <p>&copy; 2026 Dee Kennedy</p>
-          </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- Footer -->
+  <footer>
+
+    <section id="footer">
+
+      <div class="wrapper">
+
+        <div class="text_right">
+
+          <p>
+            &copy; 2026 Dee Kennedy
+          </p>
+
         </div>
-      </section>
-    </footer>
- <div class="theme-switch" id="theme-switch">
-  <span id="theme-label">Too bright? ☀️</span>
-  <label class="switch" aria-label="Toggle dark mode">
-    <input type="checkbox" id="theme-toggle" />
-    <span class="slider"></span>
-  </label>
-</div>
-    <script src="script.js"></script>
-  </body>
+
+      </div>
+
+    </section>
+
+  </footer>
+
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+
+</body>
 </html>
