@@ -1016,3 +1016,62 @@ html[data-theme="dark"] .theme-switch {
 .hero_corner a {
   display: block !important;
 } 
+/* ================================
+   Mobile Layout Improvements
+   ================================ */
+
+@media (max-width: 600px) {
+
+  /* Give the navigation room below the theme switch */
+  .site_header {
+    padding: 65px 15px 15px;
+  }
+
+  .site_header_nav ul {
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .site_header_nav a {
+    font-size: 0.95rem;
+  }
+
+  /* Keep the theme switch in the corner */
+  .theme-switch {
+    top: 15px;
+    right: 15px;
+  }
+
+  /* Add more breathing room to each section */
+  section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  /* Make the hero easier to view on a phone */
+  #hero {
+    min-height: 100vh;
+  }
+
+  /* Give About, Work, and Contact content more space */
+  .wrapper_inner {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  #about p,
+  #work p,
+  #contact p {
+    line-height: 1.7;
+  }
+
+  /* Keep project images from becoming too large */
+  .work_logos {
+    gap: 25px;
+  }
+
+  .work_logos img {
+    width: 220px;
+    height: 220px;
+  }
+}
