@@ -592,6 +592,14 @@ section#footer {
 
 
 /* about section */
+#about h2 {
+  margin-bottom: 20px;
+   text-decoration: underline;
+}
+
+#about p {
+  margin-bottom: 30px;
+}
 
 .about_content {
 
@@ -645,6 +653,14 @@ section#footer {
 
 /* work section */
 
+#work h2 {
+  margin-bottom: 25px;
+   text-decoration: underline;
+}
+
+#work p {
+  margin-bottom: 40px;
+}
 .work_logos {
 
   margin-top: var(--space-xl);
@@ -664,6 +680,17 @@ section#footer {
 
 
 /* contact section */
+
+#contact h2 {
+  margin-bottom: 20px;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+}
+
+#contact p {
+  margin-bottom: 30px;
+}
 
 .contact_form {
 
