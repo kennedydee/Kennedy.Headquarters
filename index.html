@@ -1,135 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <link rel="stylesheet" href="style.css" />
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
   <title>Kennedy - CodeSquad Portfolio</title>
 </head>
 
 <body>
 
-  <!-- Dark Mode Slider -->
   <div class="theme-switch" id="theme-switch">
     <span id="theme-label">Too bright? ☀️</span>
-
     <label class="switch" aria-label="Toggle dark mode">
-      <input type="checkbox" id="theme-toggle" />
+      <input type="checkbox" id="theme-toggle">
       <span class="slider"></span>
     </label>
   </div>
 
-
-  <!-- Header -->
   <header class="site_header">
-  <div class="wrapper">
-    <nav class="site_header_nav" aria-label="Main navigation">
-      <ul>
-        <li><a href="#0">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#work">Work</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
+    <div class="wrapper">
+      <nav class="site_header_nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="#0">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
   <main>
 
-    <!-- Hero Section -->
     <section id="hero">
-
       <video autoplay muted loop playsinline class="hero-video">
-        <source
-          src="assets/space-background.mp4"
-          type="video/mp4"
-        />
+        <source src="assets/space-background.mp4" type="video/mp4">
       </video>
 
-      <div class="wrapper">
-
-        <div class="wrapper_inner">
-
-          <div class="text_center hero_content">
-            <h1 class="h2">DeJa Kennedy</h1>
-
-            <p class="h5">
-              Cyber security student, hobbyist, and aspiring software engineer
-            </p>
-          </div>
-
-          <p class="h5 text_center">
-            Welcome to my personal portfolio site, built to showcase some of
-            what I've learned so far in cybersecurity and software development.
-          </p>
-
+      <div class="wrapper_inner">
+        <div class="text_center hero_content">
+          <h1 class="h2">DeJa Kennedy</h1>
+          <p class="h5">Cyber security student, hobbyist, and aspiring software engineer</p>
         </div>
 
+        <p class="h5 text_center">
+          Welcome to my personal portfolio site, built to showcase some of what I've learned so far in cybersecurity and software development.
+        </p>
       </div>
 
-
-      <!-- Hero Image and Social Links -->
       <div class="hero_corner">
-
-        <img
-          src="assets/yellow-shirt-headshot.png"
-          alt="Photo of Dee"
-          class="hero_img"
-        />
+        <img src="assets/yellow-shirt-headshot.png" alt="Photo of Dee" class="hero_img">
 
         <ul role="list" class="flex">
-
           <li>
-            <a
-              href="https://github.com/kennedydee"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                src="assets/icon-github.svg"
-                alt="GitHub icon"
-                width="24"
-                height="24"
-              />
+            <a href="https://github.com/kennedydee" target="_blank" rel="noopener noreferrer">
+              <img src="assets/icon-github.svg" alt="GitHub icon" width="24" height="24">
             </a>
           </li>
 
           <li>
-            <a
-              href="https://www.linkedin.com/in/deja-kennedy-9246a8155"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                src="assets/icon-linkedin.svg"
-                alt="LinkedIn"
-                width="24"
-                height="24"
-              />
+            <a href="https://www.linkedin.com/in/deja-kennedy-9246a8155" target="_blank" rel="noopener noreferrer">
+              <img src="assets/icon-linkedin.svg" alt="LinkedIn" width="24" height="24">
             </a>
           </li>
-
         </ul>
-
       </div>
-
     </section>
 
-
-    <!-- About Section -->
     <section id="about">
-
       <div class="wrapper">
-
         <div class="text_center">
-
-          <h2 class="h3">
-            About me
-          </h2>
-
+          <h2 class="h3">About me</h2>
         </div>
 
         <p class="h5">
@@ -149,68 +90,48 @@
           is to travel to Greece someday, as I would enjoy experiencing its
           rich history, culture, and beautiful landscapes.
         </p>
-
       </div>
-
     </section>
 
-
-    <!-- Work Section -->
     <section id="work">
-  <div class="wrapper_inner">
-    <div class="text_center">
+      <div class="wrapper_inner">
+        <div class="text_center">
+          <h2 class="h3">My Work</h2>
 
-      <h2 class="h3">My Work</h2>
+          <p class="h5">
+            Here are a few projects I completed during the CodeSquad mini-course,
+            including an area calculator, a basic event hub, and a web browser
+            list. These projects allowed me to practice my HTML, CSS, and
+            JavaScript skills while developing my understanding of web development.
+          </p>
 
-      <p class="h5">
-        Here are a few projects I completed during the CodeSquad mini-course, including an area calculator, a basic event hub, and a web browser list. These projects allowed me to practice my HTML, CSS, and JavaScript skills while developing my understanding of web development.
-      </p>
+          <ul role="list" class="work_logos flex flex_center">
+            <li><img src="assets/Calc-project.png" alt="Area Calculator project"></li>
+            <li><img src="assets/event-hub-code.png" alt="Event Hub project"></li>
+            <li><img src="assets/web-browser-list.png" alt="Web Browser List project"></li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-      <ul role="list" class="work_logos flex flex_center">
-        <li>
-          <img src="assets/Calc-project.png" alt="Area Calculator project" />
-        </li>
-        <li>
-          <img src="assets/event-hub-code.png" alt="Event Hub project" />
-        </li>
-        <li>
-          <img src="assets/web-browser-list.png" alt="Web Browser List project" />
-        </li>
-      </ul>
+    <section id="contact">
+      <div class="wrapper_inner">
+        <div class="text_center">
+          <a href="mailto:17kennedy.d@gmail.com" class="email_button">Contact Me</a>
 
-    </div>
-  </div>
-</section>
+          <p>
+            Like what you see?
+            I'd love to hear your thoughts!
+            Feel free to reach out to me by email.
+          </p>
+        </div>
+      </div>
+    </section>
 
-<section id="contact">
-  <div class="wrapper_inner">
-    <div class="text_center">
+  </main>
 
-      <a
-        href="mailto:17kennedy.d@gmail.com"
-        class="email_button"
-      >
-        Contact Me
-      </a>
- <h5>
-        Like what you see?
-        I'd love to hear your thoughts!
-        Feel free to reach out to me by email.
-      </p> </h5>
-    </div>
-  </div>
-</section>
+  <div class="bottom_name">Dee Kennedy</div>
 
-<div class="bottom_name">
-  Dee Kennedy
-</div>
-
-<script src="script.js"></script>
-</body>
-</html>
-
-  <!-- JavaScript -->
   <script src="script.js"></script>
-
 </body>
 </html>

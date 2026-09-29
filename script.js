@@ -1,28 +1,12 @@
-// ================================
-// Portfolio JavaScript
-// ================================
-
 document.addEventListener("DOMContentLoaded", () => {
-
-  // ================================
-  // Smooth Scrolling
-  // ================================
-
-  const navLinks = document.querySelectorAll(".site_header_nav a");
-
-  navLinks.forEach((link) => {
+  // Smooth scrolling
+  document.querySelectorAll(".site_header_nav a").forEach((link) => {
     link.addEventListener("click", (event) => {
-
       const targetId = link.getAttribute("href");
 
       if (!targetId || targetId === "#0") {
         event.preventDefault();
-
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth"
-        });
-
+        window.scrollTo({ top: 0, behavior: "smooth" });
         return;
       }
 
@@ -30,119 +14,53 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (targetSection) {
         event.preventDefault();
-
         targetSection.scrollIntoView({
           behavior: "smooth",
           block: "start"
         });
       }
-
     });
   });
 
-
-  // ================================
-  // Current Year
-  // ================================
-
-  const footerText = document.querySelector("#footer p");
-
-  if (footerText) {
-    footerText.innerHTML = `&copy; ${new Date().getFullYear()} Dee Kennedy`;
-  }
-
-
-  // ================================
-  // Dark Mode Toggle
-  // ================================
-
+  // Dark mode
   const themeToggle = document.getElementById("theme-toggle");
   const themeLabel = document.getElementById("theme-label");
-
+  const heroVideo = document.querySelector(".hero-video");
 
   function updateTheme(isDark) {
+    document.documentElement.setAttribute(
+      "data-theme",
+      isDark ? "dark" : "light"
+    );
 
-    if (isDark) {
+    localStorage.setItem("theme", isDark ? "dark" : "light");
 
-      document.documentElement.setAttribute("data-theme", "dark");
-      localStorage.setItem("theme", "dark");
-
-      if (themeLabel) {
-        themeLabel.textContent = "Too dark? 🌙";
-      }
-
-    } else {
-
-      document.documentElement.setAttribute("data-theme", "light");
-      localStorage.setItem("theme", "light");
-
-      if (themeLabel) {
-        themeLabel.textContent = "Too bright? ☀️";
-      }
-
+    if (themeLabel) {
+      themeLabel.textContent = isDark
+        ? "Too dark? 🌙"
+        : "Too bright? ☀️";
     }
-
   }
 
-
-  // ================================
-  // Load Saved Theme
-  // ================================
-
   if (themeToggle) {
+    const isDark = localStorage.getItem("theme") === "dark";
 
-    const savedTheme = localStorage.getItem("theme");
-
-    if (savedTheme === "dark") {
-      themeToggle.checked = true;
-      updateTheme(true);
-    } else {
-      themeToggle.checked = false;
-      updateTheme(false);
-    }
-
-
-    // ================================
-    // Listen for Slider Changes
-    // ================================
+    themeToggle.checked = isDark;
+    updateTheme(isDark);
 
     themeToggle.addEventListener("change", () => {
       updateTheme(themeToggle.checked);
-    });
 
+      if (heroVideo?.paused) {
+        heroVideo.play().catch(() => {});
+      }
+    });
   }
 
-
-  // ================================
-  // Hero Video
-  // ================================
-
-  const heroVideo = document.querySelector(".hero-video");
-
+  // Hero video error handling
   if (heroVideo) {
-
     heroVideo.addEventListener("error", () => {
       console.log("The hero background video could not be loaded.");
     });
-
-
-    // Keep video playing when dark mode changes
-    if (themeToggle) {
-
-      themeToggle.addEventListener("change", () => {
-
-        if (heroVideo.paused) {
-
-          heroVideo.play().catch((error) => {
-            console.log("Video playback could not resume:", error);
-          });
-
-        }
-
-      });
-
-    }
-
   }
-
 });
